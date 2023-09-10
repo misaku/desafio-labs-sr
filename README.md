@@ -1,66 +1,103 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# DESAFIO LABS
+### ATENÇÃO
+* Este desafio é destinado a vaga senior em PHP, estou me aplicando a vaga, tenho uma experiencia de 7 ano de php porem faz 5 anos que nao tenho contato com o mesmo, e nao tenho experiencia o framwork laravel, porem vou utilizar o mesmo po se tratar do quevou enfrentar caso passar na vag =)
+* Vou tentar responder tudo através da API
+### START 
+Eu segui o starte padrão do laravel com composer, e vou usarele para poder criar os endpoints e responder os desafios, o código abaixo serve para iniciar o projeto
+- vamos definir um alias para facilitar o nossos comandos
+```bash
+alias sail='[ -f sail ] && sh sail || sh vendor/bin/sail'
+```
+- inicia servidor
+```bash
+# modo visual
+sail up
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+# modo background
+sail up -d
+```
+Obs: como definimos o alias quando digitamos `sail up` é o mesmo que  `./vendor/bin/sail up`
+- parar servidor
+```bash
+sail stop
+```
 
-## About Laravel
+## Instruções:
+Responda a todas as perguntas com base em seu conhecimento e experiência. Você pode usar qualquer linguagem de programação de sua escolha.
+Se você não souber a resposta para uma pergunta, indique isso claramente. Se você precisar fazer suposições, explique-as claramente.
+Seja sincero.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+### Seção 1: Fundamentos de Programação
+Escreva um programa que verifique se um número inteiro é um número primo. Explique a diferença entre herança e composição em programação orientada a objetos. 
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### Seção 2: Estruturas de Dados e Algoritmos
+Implemente o algoritmo de ordenação rápida (quicksort) em sua linguagem de programação escolhida.
+Descreva as vantagens e desvantagens das árvores binárias de busca em comparação com tabelas de hash.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### Seção 3: Arquitetura de Software
+Descreva o padrão de arquitetura de software MVC (Model-View-Controller). Como ele ajuda a manter o código limpo e organizado?
+Quais são os principais princípios do desenvolvimento orientado a testes (TDD - Test-Driven Development)? Como você aplicaria esses princípios em um projeto de software?
 
-## Learning Laravel
+### Seção 4: Experiência Profissional
+Liste os três projetos de software mais complexos em que você trabalhou e descreva seu papel e contribuições específicas em cada um.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### Seção 5: Resolução de Problemas
+Você foi designado para otimizar o desempenho de um aplicativo da web que está enfrentando problemas de carregamento lento. Descreva o processo que você seguiria para identificar e resolver esses problemas.
+Como você lidaria com um bug crítico em produção que está afetando os clientes? Descreva seu processo de investigação e resolução.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+### Seção 6: Comunicação e Colaboração
+Descreva uma situação em que você teve que colaborar efetivamente com outros membros da equipe para resolver um desafio técnico. Como você lidou com essa situação? Seção 7: Perguntas Gerais
+Quais são suas linguagens de programação e tecnologias favoritas? Por quê?
+O que você faz para se manter atualizado com as tendências e avanços em tecnologia e desenvolvimento de software?
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### Desafio Final
 
-## Laravel Sponsors
+A DigitalMaps é uma empresa especializada na produção de receptores GPS. A organização está empenhada em lançar um dispositivo que promete auxiliar pessoas
+na “localização de pontos de interesse”, e você será o responsável pela criação da
+solução!
+Você deve desenvolver os serviços que fornecerão toda a inteligência para
+atender ao dispositivo.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+#### Bora codar?
 
-### Premium Partners
+Você deverá criar um serviço que permita a inserção de novas localizações de ponto
+de interesse. Exemplo:
+Posto de combustível, restaurante, parque ecológico, praça etc.
+O serviço deve além disso, permitir a inserção das coordenadas geográficas
+referentes à este ponto de interesse (X e Y) e horário de funcionamento (abertura e
+fechamento).
+* Obs1: Coordenadas devem ser números inteiros positivos.
+* Obs2: Estas informações devem ser armazenadas em uma base dados
+qualquer.
+* Obs3: Para pontos como a praça, não deve haver horário de funcionamento.
+O serviço deve permitir a listagem de todos os pontos de interesse cadastrados.
+O serviço deve permitir a listagem de todos os pontos de interesse por proximidade,
+ou seja, fornecendo as coordenadas X e Y, a distância em metros e hora atual.
+#### Exemplo:
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+##### Dados:
+Restaurante (x=27, y=12, opened=12:00, closed=18:00)
+Posto de combustível (x=31, y=18, opened=08:00, closed=18:00)
+Praça (x=15, y=12)
 
-## Contributing
+##### Entrada:
+x=20, y=10, mts=10, hr=19:00
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+##### Saída:
+Restaurante, fechado
+Praça, aberto
+Algumas considerações:
 
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+2. As APIs deverão seguir o modelo RESTFul com formato JSON
+3. Faça testes unitários, suite de testes bem organizados. (Dica. Dê uma
+   a atenção especial a esse item!)
+4. Use git/bitbucket e tente fazer commits pequenos e bem descritos.
+5. Faça pelo menos um README explicando como fazer o setup do seu projeto, uma
+   explicação da solução proposta, o mínimo de documentação para que outro
+   desenvolvedor entenda seu código.
+6. Siga o que considera boas práticas de programação, coisas que um bom
+   desenvolvedor olhe no seu código e não ache "feio" ou "ruim". Procure manter a
+   simplicidade do código.
+7. Após concluir o teste, suba em um repositório privado e mande-nos o link.
+   Qualquer dúvida estamos à disposição! :D
+   Boa Sorte!
