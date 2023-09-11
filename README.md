@@ -27,28 +27,33 @@ Responda a todas as perguntas com base em seu conhecimento e experiência. Você
 Se você não souber a resposta para uma pergunta, indique isso claramente. Se você precisar fazer suposições, explique-as claramente.
 Seja sincero.
 
-### Seção 1: Fundamentos de Programação
-Escreva um programa que verifique se um número inteiro é um número primo. Explique a diferença entre herança e composição em programação orientada a objetos. 
+###  Seção 1: Fundamentos de Programação
+-[X] Escreva um programa que verifique se um número inteiro é um número primo. 
+-[ ] Explique a diferença entre herança e composição em programação orientada a objetos. 
 
 ### Seção 2: Estruturas de Dados e Algoritmos
-Implemente o algoritmo de ordenação rápida (quicksort) em sua linguagem de programação escolhida.
-Descreva as vantagens e desvantagens das árvores binárias de busca em comparação com tabelas de hash.
+-[ ] Implemente o algoritmo de ordenação rápida (quicksort) em sua linguagem de programação escolhida.
+-[ ] Descreva as vantagens e desvantagens das árvores binárias de busca em comparação com tabelas de hash.
 
 ### Seção 3: Arquitetura de Software
-Descreva o padrão de arquitetura de software MVC (Model-View-Controller). Como ele ajuda a manter o código limpo e organizado?
-Quais são os principais princípios do desenvolvimento orientado a testes (TDD - Test-Driven Development)? Como você aplicaria esses princípios em um projeto de software?
+-[ ] Descreva o padrão de arquitetura de software MVC (Model-View-Controller). Como ele ajuda a manter o código limpo e organizado?
+-[ ] Quais são os principais princípios do desenvolvimento orientado a testes (TDD - Test-Driven Development)? Como você aplicaria esses princípios em um projeto de software?
 
 ### Seção 4: Experiência Profissional
 Liste os três projetos de software mais complexos em que você trabalhou e descreva seu papel e contribuições específicas em cada um.
 
 ### Seção 5: Resolução de Problemas
-Você foi designado para otimizar o desempenho de um aplicativo da web que está enfrentando problemas de carregamento lento. Descreva o processo que você seguiria para identificar e resolver esses problemas.
-Como você lidaria com um bug crítico em produção que está afetando os clientes? Descreva seu processo de investigação e resolução.
+-[ ] Você foi designado para otimizar o desempenho de um aplicativo da web que está enfrentando problemas de carregamento lento. 
+  -[ ] Descreva o processo que você seguiria para identificar e resolver esses problemas.
+  Como você lidaria com um bug crítico em produção que está afetando os clientes? 
+  -[ ] Descreva seu processo de investigação e resolução.
 
 ### Seção 6: Comunicação e Colaboração
-Descreva uma situação em que você teve que colaborar efetivamente com outros membros da equipe para resolver um desafio técnico. Como você lidou com essa situação? Seção 7: Perguntas Gerais
-Quais são suas linguagens de programação e tecnologias favoritas? Por quê?
-O que você faz para se manter atualizado com as tendências e avanços em tecnologia e desenvolvimento de software?
+-[ ] Descreva uma situação em que você teve que colaborar efetivamente com outros membros da equipe para resolver um desafio técnico. Como você lidou com essa situação? 
+
+### Seção 7: Perguntas Gerais
+-[ ] Quais são suas linguagens de programação e tecnologias favoritas? Por quê?
+-[ ] O que você faz para se manter atualizado com as tendências e avanços em tecnologia e desenvolvimento de software?
 
 ### Desafio Final
 
