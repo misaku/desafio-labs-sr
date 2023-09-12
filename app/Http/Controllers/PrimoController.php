@@ -21,11 +21,7 @@ class PrimoController extends Controller
     public function store(Request $request)
     {
         $number = $request->get('number');
-        $isPrime = $this->model->isPrime($number);
-        $data = [
-            "number" => $number,
-            "isPrime" => $isPrime,
-        ];
-        return response()->json($data);
+        $response = $this->model->isPrime($number);
+        return json_encode($response);
     }
 }
