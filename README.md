@@ -52,8 +52,8 @@ Liste os três projetos de software mais complexos em que você trabalhou e desc
 -[ ] Descreva uma situação em que você teve que colaborar efetivamente com outros membros da equipe para resolver um desafio técnico. Como você lidou com essa situação? 
 
 ### Seção 7: Perguntas Gerais
--[ ] Quais são suas linguagens de programação e tecnologias favoritas? Por quê?
--[ ] O que você faz para se manter atualizado com as tendências e avanços em tecnologia e desenvolvimento de software?
+-[X] Quais são suas linguagens de programação e tecnologias favoritas? Por quê?
+-[X] O que você faz para se manter atualizado com as tendências e avanços em tecnologia e desenvolvimento de software?
 
 ### Desafio Final
 
