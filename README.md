@@ -32,7 +32,7 @@ Seja sincero.
 -[ ] Explique a diferença entre herança e composição em programação orientada a objetos. 
 
 ### Seção 2: Estruturas de Dados e Algoritmos
--[ ] Implemente o algoritmo de ordenação rápida (quicksort) em sua linguagem de programação escolhida.
+-[X] Implemente o algoritmo de ordenação rápida (quicksort) em sua linguagem de programação escolhida.
 -[ ] Descreva as vantagens e desvantagens das árvores binárias de busca em comparação com tabelas de hash.
 
 ### Seção 3: Arquitetura de Software
