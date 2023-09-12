@@ -3,7 +3,6 @@
 namespace Tests\Unit;
 
 use App\Http\UseCases\QuickSort;
-use App\Models\Primo as PrimoModel;
 use App\Models\Sort;
 use App\Http\Controllers\SortController;
 use Illuminate\Http\Request;
@@ -29,6 +28,16 @@ class SortTest extends TestCase
     {
         $model = new Sort();
         $sorted = $model->execute(UNSORTED)['sortedList'];
+        $stringListOk = implode(',', SORTED);
+        $stringList = implode(',', $sorted);
+        $this->assertTrue($stringList==$stringListOk);
+    }
+    public function test_that_controller_sorted_itens(): void
+    {
+        $controller = new SortController();
+        $request = Request::create('/api/sort', 'POST', ['list' => UNSORTED]);
+        $response = json_decode($controller->store($request),true);
+        $sorted = $response['sortedList'];
         $stringListOk = implode(',', SORTED);
         $stringList = implode(',', $sorted);
         $this->assertTrue($stringList==$stringListOk);

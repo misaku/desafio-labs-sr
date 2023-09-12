@@ -15,6 +15,6 @@ class SortController extends Controller
     }
     public function store(Request $request)
     {
-       return $this->model->execute($request->get('list'));
+       return json_encode($this->model->execute($request->get('list')));
     }
 }
