@@ -3,6 +3,9 @@
 namespace Tests\Unit;
 
 use App\Http\UseCases\QuickSort;
+use App\Models\Primo as PrimoModel;
+use App\Models\Sort;
+use App\Http\Controllers\SortController;
 use Illuminate\Http\Request;
 use PHPUnit\Framework\TestCase;
 
@@ -20,6 +23,14 @@ class SortTest extends TestCase
         $sorted = $qSort->execute()->expose()['sortedList'];
         $stringList = implode(',', $sorted);
         $stringListOk = implode(',', SORTED);
+        $this->assertTrue($stringList==$stringListOk);
+    }
+    public function test_that_model_sorted_itens(): void
+    {
+        $model = new Sort();
+        $sorted = $model->execute(UNSORTED)['sortedList'];
+        $stringListOk = implode(',', SORTED);
+        $stringList = implode(',', $sorted);
         $this->assertTrue($stringList==$stringListOk);
     }
 
