@@ -18,3 +18,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 Route::post('/primo', [\App\Http\Controllers\PrimoController::class, 'store'] );
+Route::post('/sort', [\App\Http\Controllers\SortController::class, 'store'] );
+Route::get('/question', [\App\Http\Controllers\QuestionsController::class, 'index'] );
