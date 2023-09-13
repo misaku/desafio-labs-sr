@@ -20,3 +20,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::post('/primo', [\App\Http\Controllers\PrimoController::class, 'store'] );
 Route::post('/sort', [\App\Http\Controllers\SortController::class, 'store'] );
 Route::get('/question', [\App\Http\Controllers\QuestionsController::class, 'index'] );
+Route::get('/places', [\App\Http\Controllers\PlacesController::class, 'index'] );
