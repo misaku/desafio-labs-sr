@@ -6,7 +6,7 @@ use Illuminate\Contracts\Validation\ValidationRule;
 use Illuminate\Foundation\Http\FormRequest;
 
 
-class PlacesPostRequest extends FormRequest
+class PlacesGetRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,36 +23,36 @@ class PlacesPostRequest extends FormRequest
      */
     public function rules(): array
     {
-        function integerPositive($name)
+        function integerPositive($name,$number=0)
         {
-            $errorMessage = 'O campo ' . $name . ' deve ser um número inteiro e positivo(>=0).';
+            $errorMessage = 'O campo ' . $name . ' deve ser um número inteiro e maior ou igual '.$number.').';
             return [
-                "required",
+                "nullable",
                 "integer",
-                function ($attribute, $value, $fail) use ($errorMessage) {
-                    if (!is_int($value) || $value <= 0) {
+                function ($attribute, $value, $fail) use ($errorMessage, $number) {
+                    if (!is_int(intval($value)) || intval($value) <= $number) {
                         $fail($errorMessage);
                     }
                 },
             ];
         }
-
+        $xy = [
+            'x' => 'required_with:y',
+            'y' => 'required_with:x',
+        ];
         function dateRules()
         {
             return [
                 'nullable',
                 'regex:/^([01]\d|2[0-3]):([0-5]\d)$/',
-                'opened' => 'required_with:closed',
-                'closed' => 'required_with:opened',
             ];
         }
 
         return [
-            "name" => "required|max:50",
-            "x" => integerPositive('x'),
-            "y" => integerPositive('y'),
-            "opened" => dateRules(),
-            "closed" => dateRules()
+            "x" => array_merge(integerPositive('x', 1),$xy),
+            "y" => array_merge(integerPositive('y', 1),$xy),
+            "hr" => dateRules(),
+            "mts" => integerPositive('mts')
         ];
     }
 }

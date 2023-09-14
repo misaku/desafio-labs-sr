@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\PlacesGetRequest;
 use App\Http\Requests\PlacesPostRequest;
 use App\Models\Place;
 use Symfony\Component\HttpFoundation\Response;
@@ -11,13 +12,13 @@ class PlacesController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(PlacesGetRequest $request)
     {
 
-        $lat = request()->get('x');
-        $lng = request()->get('y');
-        $mts = request()->get('mts');
-        $hr = request()->get('hr');
+        $lat = $request->get('x');
+        $lng = $request->get('y');
+        $mts = $request->get('mts');
+        $hr = $request->get('hr');
 
 
         $result = Place::findAll($hr, $lat, $lng, $mts);
@@ -52,11 +53,11 @@ class PlacesController extends Controller
     public function store(PlacesPostRequest $request)
     {
         $place = new Place();
-        $place->setAttribute('name', $request->get('name'));
-        $place->setAttribute('lat', $request->get('x'));
-        $place->setAttribute('lng', $request->get('y'));
-        $opened = $request->get('opened');
-        $closed = $request->get('closed');
+        $place->setAttribute('name', $request->input('name'));
+        $place->setAttribute('lat', $request->input('x'));
+        $place->setAttribute('lng', $request->input('y'));
+        $opened = $request->input('opened');
+        $closed = $request->input('closed');
         if (!is_null($opened) && !is_null($closed)) {
             $place->setAttribute('opened', $opened);
             $place->setAttribute('closed', $closed);
