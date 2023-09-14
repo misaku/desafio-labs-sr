@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\PrimoRequest;
 use Illuminate\Http\Request;
 use App\Models\Primo;
 
@@ -18,9 +19,9 @@ class PrimoController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(PrimoRequest $request)
     {
-        $number = $request->get('number');
+        $number = $request->input('number');
         $response = $this->model->isPrime($number);
         return json_encode($response);
     }
