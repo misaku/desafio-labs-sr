@@ -5,11 +5,9 @@ namespace App\Http\UseCases;
 class QuickSort
 {
     protected array $originalList;
+
     protected array $sortedList;
 
-    /**
-     * @param array $list
-     */
     public function __construct(array $list)
     {
         $this->originalList = $list;
@@ -23,6 +21,7 @@ class QuickSort
     public function execute(): QuickSort
     {
         $this->sortedList = $this->sort($this->originalList);
+
         return $this;
     }
 
@@ -56,9 +55,9 @@ class QuickSort
         $lessListBaseSorted = $this->sort($lessListBase);
         $moreListBaseSorted = $this->sort($moreListBase);
 
+        return [...$lessListBaseSorted, $baseItem, ...$moreListBaseSorted];
         // combino as ordenacoes
-        return array_merge($lessListBaseSorted, [$baseItem], $moreListBaseSorted);
+        //return array_merge(, [], );
 
     }
-
 }

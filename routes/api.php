@@ -1,6 +1,5 @@
 <?php
 
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,11 +13,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 //middleware('auth:sanctum')->
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
-Route::post('/primo', [\App\Http\Controllers\PrimoController::class, 'store'] );
-Route::post('/sort', [\App\Http\Controllers\SortController::class, 'store'] );
-Route::get('/question', [\App\Http\Controllers\QuestionsController::class, 'index'] );
-Route::get('/places', [\App\Http\Controllers\PlacesController::class, 'index'] );
-Route::post('/places', [\App\Http\Controllers\PlacesController::class, 'store'] );
+//AUTH ROUTES---------------------------------------------------------------------------------------------------------------------
+Route::post('/auth', [\App\Http\Controllers\AuthController::class, 'login'])->withoutMiddleware(\App\Http\Middleware\Logger::class);
+Route::middleware('auth:sanctum')->get('/auth/user', [\App\Http\Controllers\AuthController::class, 'user']);
+
+//PRIMO ROUTES---------------------------------------------------------------------------------------------------------------------
+Route::middleware('auth:sanctum')->post('/primo', [\App\Http\Controllers\PrimoController::class, 'store']);
+
+//SORT ROUTES----------------------------------------------------------------------------------------------------------------------
+Route::middleware('auth:sanctum')->post('/sort', [\App\Http\Controllers\SortController::class, 'store']);
+
+//QUESTION ROUTES------------------------------------------------------------------------------------------------------------------
+Route::middleware('auth:sanctum')->get('/question', [\App\Http\Controllers\QuestionsController::class, 'index']);
+
+//PLACE ROUTES---------------------------------------------------------------------------------------------------------------------
+Route::middleware('auth:sanctum')->post('/places', [\App\Http\Controllers\PlacesController::class, 'store']);
+Route::middleware('auth:sanctum')->get('/places', [\App\Http\Controllers\PlacesController::class, 'index']);

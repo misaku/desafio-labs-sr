@@ -6,7 +6,7 @@ class Primo
 {
     private const basePrime = [2, 3, 5, 7];
 
-    static function isValid(int $number)
+    public static function isValid(int $number)
     {
         // Definicao de numeros primo sao, aqueles q for inteiro, maior que 1 e que for divisivel somente por 1 e ele mesmo.
         if ($number < 2) {

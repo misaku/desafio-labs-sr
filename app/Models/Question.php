@@ -5,12 +5,9 @@ namespace App\Models;
 class QuestionItem
 {
     private string $question;
+
     private string $response;
 
-    /**
-     * @param string $question
-     * @param string $response
-     */
     public function __construct(string $question, string $response)
     {
         $this->question = $question;
@@ -61,13 +58,13 @@ No mesmo tempo que eu estava ajudando e entendendo o inventário, o pessoal do m
         ];
     }
 
-
     public function index()
     {
         $response = [];
         foreach ($this->data as $valor) {
             $response[] = $valor->expose();
         }
+
         return $response;
     }
 }

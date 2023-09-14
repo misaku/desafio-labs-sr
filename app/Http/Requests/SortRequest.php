@@ -23,20 +23,8 @@ class SortRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'list' => [
-                'required',
-                function ($attribute, $value, $fail) {
-                    var_dump($value);
-                    if (!is_array($value)) {
-                        $fail('O campo list deve ser um array de números');
-                    }
-                    foreach ($value as $item) {
-                        if (!is_numeric($item)) {
-                            $fail('Os elementos do array list devem ser números.');
-                        }
-                    }
-                },
-            ],
+            'list' => ['required', 'array'],
+            'list.*' => ['numeric'],
         ];
     }
 }

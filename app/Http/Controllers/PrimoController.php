@@ -14,7 +14,6 @@ class PrimoController extends Controller
         $this->model = new Primo();
     }
 
-
     /**
      * Store a newly created resource in storage.
      */
@@ -22,6 +21,7 @@ class PrimoController extends Controller
     {
         $number = $request->input('number');
         $response = $this->model->isPrime($number);
+
         return json_encode($response);
     }
 }

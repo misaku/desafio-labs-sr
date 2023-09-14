@@ -5,7 +5,6 @@ namespace App\Http\Requests;
 use Illuminate\Contracts\Validation\ValidationRule;
 use Illuminate\Foundation\Http\FormRequest;
 
-
 class PlacesPostRequest extends FormRequest
 {
     /**
@@ -23,36 +22,12 @@ class PlacesPostRequest extends FormRequest
      */
     public function rules(): array
     {
-        function integerPositive($name)
-        {
-            $errorMessage = 'O campo ' . $name . ' deve ser um número inteiro e positivo(>=0).';
-            return [
-                "required",
-                "integer",
-                function ($attribute, $value, $fail) use ($errorMessage) {
-                    if (!is_int($value) || $value <= 0) {
-                        $fail($errorMessage);
-                    }
-                },
-            ];
-        }
-
-        function dateRules()
-        {
-            return [
-                'nullable',
-                'regex:/^([01]\d|2[0-3]):([0-5]\d)$/',
-                'opened' => 'required_with:closed',
-                'closed' => 'required_with:opened',
-            ];
-        }
-
         return [
-            "name" => "required|max:50",
-            "x" => integerPositive('x'),
-            "y" => integerPositive('y'),
-            "opened" => dateRules(),
-            "closed" => dateRules()
+            'name' => 'required|max:50',
+            'x' => ['required_with:y', 'integer', 'min:1'],
+            'y' => ['required_with:x', 'integer', 'min:1'],
+            'opened' => ['required_with:closed', 'date_format:H:i'],
+            'closed' => ['required_with:opened', 'date_format:H:i'],
         ];
     }
 }

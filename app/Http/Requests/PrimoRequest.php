@@ -23,20 +23,8 @@ class PrimoRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'number' => ['required',
-                function ($attribute, $value, $fail) {
-                    if (!is_int($value) && !is_array($value)) {
-                        $fail('O campo numbers deve ser um número inteiros ou um array de números inteiros.');
-                    }
-                    if (is_array($value)) {
-                        foreach ($value as $item) {
-                            if (!is_int($item)) {
-                                $fail('Os elementos do array numbers devem ser números inteiros.');
-                            }
-                        }
-                    }
-                },
-            ],
+            'number' => is_array($this->get('number')) ? ['required', 'array'] : ['required', 'integer'],
+            'number.*' => ['integer'],
         ];
     }
 }

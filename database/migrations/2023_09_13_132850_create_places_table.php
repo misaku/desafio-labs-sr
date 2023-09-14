@@ -13,12 +13,12 @@ return new class extends Migration
     {
         Schema::create('places', function (Blueprint $table) {
             $table->id();
-            $table->string("name", 50);
-            $table->time("opened")->nullable();
-            $table->time("closed")->nullable();
+            $table->string('name', 50);
+            $table->time('opened')->nullable();
+            $table->time('closed')->nullable();
             $table->boolean('fullTime')->default(false);
-            $table->integer("lat");
-            $table->integer("lng");
+            $table->integer('lat');
+            $table->integer('lng');
             $table->timestamps();
         });
     }

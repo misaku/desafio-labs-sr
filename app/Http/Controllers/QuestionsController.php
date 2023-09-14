@@ -13,13 +13,13 @@ class QuestionsController extends Controller
         $this->model = new Question();
     }
 
-
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
         $response = $this->model->index();
+
         return json_encode($response);
     }
 }

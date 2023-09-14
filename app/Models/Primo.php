@@ -7,12 +7,9 @@ use App\Http\UseCases\Primo as PrimoUseCase;
 class PrimoItem
 {
     private int $number;
+
     private bool $isPrime;
 
-    /**
-     * @param int $number
-     * @param bool $isPrime
-     */
     public function __construct(int $number, bool $isPrime)
     {
         $this->number = $number;
@@ -27,10 +24,9 @@ class PrimoItem
 
 class Primo
 {
-
     public function isPrime(int|array $number)
     {
-        $response = array();
+        $response = [];
         if (is_array($number)) {
             foreach ($number as $value) {
                 $response[] = $this->buildResponse($value)->expose();
@@ -46,5 +42,4 @@ class Primo
     {
         return new PrimoItem($number, PrimoUseCase::isValid($number));
     }
-
 }

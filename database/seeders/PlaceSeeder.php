@@ -6,7 +6,6 @@ use Illuminate\Database\Seeder;
 
 class PlaceSeeder extends Seeder
 {
-
     public function run(): void
     {
 
@@ -14,7 +13,7 @@ class PlaceSeeder extends Seeder
             'name' => 'Restaurante',
             'opened' => '12:00',
             'closed' => '18:00',
-            'fullTime'=>false,
+            'fullTime' => false,
             'lat' => 27,
             'lng' => 12,
         ]);
@@ -23,14 +22,14 @@ class PlaceSeeder extends Seeder
             'name' => 'Posto de combustível',
             'opened' => '08:00',
             'closed' => '18:00',
-            'fullTime'=>false,
+            'fullTime' => false,
             'lat' => 31,
             'lng' => 18,
         ]);
 
         \App\Models\Place::factory()->create([
             'name' => 'Praça',
-            'fullTime'=>true,
+            'fullTime' => true,
             'opened' => null,
             'closed' => null,
             'lat' => 15,
