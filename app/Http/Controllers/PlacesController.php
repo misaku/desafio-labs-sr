@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Place;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Symfony\Component\HttpFoundation\Response;
 
 class PlacesController extends Controller
 {
@@ -49,38 +50,19 @@ class PlacesController extends Controller
      */
     public function store(Request $request)
     {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
+        $place = new Place();
+        $place->setAttribute('name',  $request->get('name'));
+        $place->setAttribute('lat',  $request->get('x'));
+        $place->setAttribute('lng',  $request->get('y'));
+        $opened = $request->get('opened');
+        $closed = $request->get('closed');
+        if(!is_null($opened)&&!is_null($closed)){
+            $place->setAttribute('opened',$opened);
+            $place->setAttribute('closed',$closed);
+        } else {
+            $place->setAttribute('fullTime', true);
+        }
+        $place->save();
+        return response()->noContent(Response::HTTP_CREATED);
     }
 }
