@@ -2,8 +2,6 @@
 
 namespace App\Models;
 
-use App\Http\UseCases\Primo as PrimoUseCase;
-
 class QuestionItem
 {
     private string $question;

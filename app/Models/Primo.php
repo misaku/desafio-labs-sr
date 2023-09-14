@@ -4,7 +4,8 @@ namespace App\Models;
 
 use App\Http\UseCases\Primo as PrimoUseCase;
 
-class PrimoItem {
+class PrimoItem
+{
     private int $number;
     private bool $isPrime;
 
@@ -17,17 +18,15 @@ class PrimoItem {
         $this->number = $number;
         $this->isPrime = $isPrime;
     }
-    public function expose() {
+
+    public function expose()
+    {
         return get_object_vars($this);
     }
 }
+
 class Primo
 {
-
-    protected function buildResponse($number)
-    {
-        return new PrimoItem($number, PrimoUseCase::isValid($number));
-    }
 
     public function isPrime(int|array $number)
     {
@@ -41,6 +40,11 @@ class Primo
         }
 
         return $response;
+    }
+
+    protected function buildResponse($number)
+    {
+        return new PrimoItem($number, PrimoUseCase::isValid($number));
     }
 
 }

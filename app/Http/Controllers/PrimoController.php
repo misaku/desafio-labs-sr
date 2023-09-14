@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\PrimoRequest;
-use Illuminate\Http\Request;
 use App\Models\Primo;
 
 class PrimoController extends Controller

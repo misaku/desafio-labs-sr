@@ -15,6 +15,17 @@ class QuickSort
         $this->originalList = $list;
     }
 
+    public function expose()
+    {
+        return get_object_vars($this);
+    }
+
+    public function execute(): QuickSort
+    {
+        $this->sortedList = $this->sort($this->originalList);
+        return $this;
+    }
+
     protected function sort(array $list)
     {
 
@@ -48,14 +59,6 @@ class QuickSort
         // combino as ordenacoes
         return array_merge($lessListBaseSorted, [$baseItem], $moreListBaseSorted);
 
-    }
-    public function expose() {
-        return get_object_vars($this);
-    }
-    public function execute(): QuickSort
-    {
-        $this->sortedList = $this->sort($this->originalList);
-        return $this;
     }
 
 }
