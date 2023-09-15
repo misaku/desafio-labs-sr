@@ -88,11 +88,13 @@ curl --request POST --url http://localhost/api/auth --header 'Content-Type: appl
  - healthcheck
    ![imagem mostrando o halthcheck na web](https://github.com/misaku/desafio-labs-sr/blob/main/assets/health-web.png)
    ![imagem mostrando o halthcheck no console](https://github.com/misaku/desafio-labs-sr/blob/main/assets/health-console.png)
+
+ - CI [github-actions](https://github.com/misaku/desafio-labs-sr/actions/runs/6202179219/job/16840393044)
+
 ## Instruções:
 Responda a todas as perguntas com base em seu conhecimento e experiência. Você pode usar qualquer linguagem de programação de sua escolha.
 Se você não souber a resposta para uma pergunta, indique isso claramente. Se você precisar fazer suposições, explique-as claramente.
 Seja sincero.
- - CI [github-actions](https://github.com/misaku/desafio-labs-sr/actions/runs/6202179219/job/16840393044) 
 
 ###  Seção 1: Fundamentos de Programação
 - [X] Escreva um programa que verifique se um número inteiro é um número primo. 
