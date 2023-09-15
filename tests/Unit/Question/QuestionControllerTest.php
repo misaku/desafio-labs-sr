@@ -1,24 +1,12 @@
 <?php
 
-namespace Tests\Unit;
+namespace Tests\Unit\Question;
 
 use App\Http\Controllers\QuestionsController;
-use App\Models\Question;
 use PHPUnit\Framework\TestCase;
 
-class QuestionTest extends TestCase
+class QuestionControllerTest extends TestCase
 {
-    /**
-     * A basic test example.
-     */
-    public function test_that_model_questions_list(): void
-    {
-        $model = new Question();
-        $list = $model->index();
-        $size = count($list);
-        $this->assertTrue($size == 9);
-    }
-
     public function test_that_controller_questions_list(): void
     {
         $controller = new QuestionsController();
