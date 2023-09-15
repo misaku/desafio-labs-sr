@@ -24,6 +24,7 @@ use OpenApi\Annotations as OA;
  *     path="/api/health",
  *     summary="Verificar status de saúde",
  *     tags={"Health"},
+ *
  *     @OA\Response(
  *         response=200,
  *         description="OK - A aplicação está saudável"

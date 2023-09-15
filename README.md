@@ -26,10 +26,6 @@ sail stop
 sail artisan migrate:fresh --seed
 ```
 # testes
- - unit OK
- - e2e OK
-
-
 ```bash 
 # normal
 sail artisan  test
@@ -67,7 +63,14 @@ sail artisan cache:clear
 | API      | POST   | `/api/places`        | SIM           | `curl --request POST --url http://localhost/api/places  --header 'Authorization: Bearer ---TOKEN---' --data '{"name":"teste 1","x": 9,"y": 1}'` ou `curl --request POST --url http://localhost/api/places  --header 'Authorization: Bearer ---TOKEN---' --data '{"name":"teste 2","x": 9,"y": 1,"closed": "22:00","opened": "18:00"}'`                                                                                                                 |
 | API      | GET    | `/api/places`        | SIM           | `curl --request GET --url 'http://localhost/api/places' --header 'Authorization: ---TOKEN---'` ou `curl --request GET --url 'http://localhost/api/places?hr=19%3A00' --header 'Authorization: ---TOKEN---'` ou `curl --request GET --url 'http://localhost/api/places?x=20&y=10' --header 'Authorization: ---TOKEN---'` ou `curl --request GET --url 'http://localhost/api/places?hr=19%3A00&x=20&y=10&mts=10' --header 'Authorization: ---TOKEN---'`  |
 
-
+## Evidencias
+ - Server Rodando
+    ![Imagem mostrando um console com o servidor startado](https://github.com/misaku/desafio-labs-sr/blob/main/assets/start-app.png)
+ - Testes OK
+   ![Imagem mostrando um console com 100% de cobertura de testes](https://github.com/misaku/desafio-labs-sr/blob/main/assets/coverage-console.png)
+   ![Imagem mostrando uma pagina com 100% de cobertura de testes](https://github.com/misaku/desafio-labs-sr/blob/main/assets/coverage-web.png)
+ - Logger
+   ![imagem mostrando o log no console](https://github.com/misaku/desafio-labs-sr/blob/main/assets/logger.png)
 ## Instruções:
 Responda a todas as perguntas com base em seu conhecimento e experiência. Você pode usar qualquer linguagem de programação de sua escolha.
 Se você não souber a resposta para uma pergunta, indique isso claramente. Se você precisar fazer suposições, explique-as claramente.
