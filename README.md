@@ -124,7 +124,7 @@ Seja sincero.
 - [X] Implemente o algoritmo de ordenação rápida (quicksort) em sua linguagem de programação escolhida.
   - `/api/sort`
 - [X] Descreva as vantagens e desvantagens das árvores binárias de busca em comparação com tabelas de hash.
-  - *Arvores binarias pode ser balanceada ou não balanceada, vantagem q é fácil de encontrar um elemento desde que seja balanceada, mas pode exigir um consumo de memoria dado q conforme vai aumentando o nível dela e a complexidade mais recursos vai exigir, e ela sendo balanceada ela esta sempre ordenada.  Sobre tabela hash não manjo muito, mas dei uma pesquisada, parece que e muito rápida, aparentemente parece ser melhor que uma árvore binária, e é ótima em busca de chave valor, porem pode acontecer de ter conflito entre chaves, não é ordenada e perde desempenho sobre iteração, mas consome menos memoria*
+  - *Árvores binárias podem ser balanceadas ou não balanceadas. Para árvores balanceadas a vantagem é que se torna fácil encontrar um elemento. No entanto, podem exigir um alto consumo de memória dado que conforme vai aumentando o níveis aumenta-se a complexidade e mais recursos são exigidos. Além disso, árvores  balanceadas sempre são ordenadas.  Sobre tabela hash nas minhas pesquisas, é rápida, é  melhor que uma árvore binária, e é ótima em busca de chave valor, porém pode acontecer de ter conflito entre chaves, não é ordenada e perde desempenho sobre iteração, mas consome menos memoria*
 
 ### Seção 3: Arquitetura de Software
 - [X] Descreva o padrão de arquitetura de software MVC (Model-View-Controller). Como ele ajuda a manter o código limpo e organizado?
@@ -139,11 +139,11 @@ Seja sincero.
 
 ### Seção 4: Experiência Profissional
 - [X] Liste os três projetos de software mais complexos em que você trabalhou e descreva seu papel e contribuições específicas em cada um.
-  - *inventario: ajudei encontrar problemas na implantação, implantar, redesenhar o fluxo de trabalho e traçar planos para melhoria do processo e repassar o conhecimento para os integrantes do time, coloquei todos detalhes desse projeto em outra questão =)*
+  - *inventario: ajudei encontrar problemas na implantação, implantar, redesenhar o fluxo de trabalho e traçar planos para melhoria do processo e repassar o conhecimento para os integrantes do time, coloquei todos detalhes desse projeto em outra questão =), mas em resumo evitamos uma multa para o magazine, e agilizamos um processo que levava dias para apenas um dia aproximadamente*
   - *Rodney: reescrevi o código dele para uma linguagem que o time tem mais domínio, mudei a experiência de usuário do aplicativo trazendo muita felicidade para os usuários do app, houve muitos elogios depois da mudança, e nesse mesmo ano o Frederico Trajano comentou no workplace que o cds elogiou muito o trabalho do nosso time, e deu parabéns para nós =).*
-  - *Implantação da Arquitetura de microfrontends: são vários projetos que utilizamos ela, mas essa arquitetura em si foi preciso de muitos estudo, o início falhamos, mas depois escolhemos outra abordagem, com ela da autonomia de qualquer time trabalhar sem depender de outro para o frontend, e sem atrapalhar em codigo de outra squad, podendo subir codigo legado com novo, e com framworks diferentes, aumentado a escalabilidade do projeto.
+  - *Implantação da Arquitetura de microfrontends: são vários projetos que utilizamos ela, projetos que trouxe bastante impacto para area de negócio, mas vou focar no ganho técnico de se utilizar ela. Essa arquitetura em si foi preciso de muitos estudo, no início falhamos, mas depois escolhemos outra abordagem, com ela da autonomia de qualquer time trabalhar sem depender de outro para o frontend, e sem atrapalhar em codigo de outra squad, podendo subir codigo legado com novo, e com framworks diferentes, aumentado a escalabilidade do projeto.
 a minha participação foi ajudar a desenvolver um padrão para podermos usar no labs, tem sido muito apoiada, e aparentemente tem grande potencial de que o labs inteiro venha usar o nosso padrão.*
-*
+
 ### Seção 5: Resolução de Problemas
 - [X] Você foi designado para otimizar o desempenho de um aplicativo da web que está enfrentando problemas de carregamento lento. Descreva o processo que você seguiria para identificar e resolver esses problemas.
   Como você lidaria com um bug crítico em produção que está afetando os clientes? Descreva seu processo de investigação e resolução.
