@@ -28,6 +28,8 @@ jobs:
       - name: Prepare Laravel Application
         run: |
           cp .env.ci .env
+          php artisan config:cache
+          php artisan cache:clear
           php artisan key:generate
 
       - name: Run Testsuite
