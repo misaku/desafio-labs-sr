@@ -75,6 +75,7 @@ sail artisan cache:clear
 Responda a todas as perguntas com base em seu conhecimento e experiência. Você pode usar qualquer linguagem de programação de sua escolha.
 Se você não souber a resposta para uma pergunta, indique isso claramente. Se você precisar fazer suposições, explique-as claramente.
 Seja sincero.
+ - CI [github-actions](https://github.com/misaku/desafio-labs-sr/actions/runs/6202179219/job/16840393044) 
 
 ###  Seção 1: Fundamentos de Programação
 - [X] Escreva um programa que verifique se um número inteiro é um número primo. 
