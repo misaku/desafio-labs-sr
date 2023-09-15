@@ -45,7 +45,18 @@ sail artisan cache:clear
 ***obs2:*** caminho da pasta de log `./storage/logs/`
 ***obs3:*** tentei configurar o elasticsearh com kibana mas estava dando erro na implementacao, como ia demandar mais tempo, infelizmente optei para deixar sem para entrega
 
-## HEALTHCHECK
+## Acesso
+`POST //localhost/api/auth`
+```json
+{
+	"email":"admin@luizalabs.com",
+	"password": "#luizaLabs123",
+	"device_name": "device-123"
+}
+```
+```bash
+curl --request POST --url http://localhost/api/auth --header 'Content-Type: application/json' --data '{ "email":"admin@luizalabs.com", "password": "#luizaLabs123", "device_name": "device-123" }
+```
 
 
 ## Endpoints:
