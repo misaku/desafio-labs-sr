@@ -86,9 +86,8 @@ curl --request POST --url http://localhost/api/auth --header 'Content-Type: appl
    ![imagem mostrando o log no console](https://github.com/misaku/desafio-labs-sr/blob/main/assets/logger.png)
 
  - healthcheck
-   ![imagem mostrando o halthcheck no console](https://github.com/misaku/desafio-labs-sr/blob/main/assets/health-console.png)
    ![imagem mostrando o halthcheck na web](https://github.com/misaku/desafio-labs-sr/blob/main/assets/health-web.png)
- - 
+   ![imagem mostrando o halthcheck no console](https://github.com/misaku/desafio-labs-sr/blob/main/assets/health-console.png)
 ## Instruções:
 Responda a todas as perguntas com base em seu conhecimento e experiência. Você pode usar qualquer linguagem de programação de sua escolha.
 Se você não souber a resposta para uma pergunta, indique isso claramente. Se você precisar fazer suposições, explique-as claramente.
