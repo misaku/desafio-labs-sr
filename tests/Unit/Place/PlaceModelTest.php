@@ -9,8 +9,9 @@ use Tests\TestCase;
 
 class PlaceModelTest extends TestCase
 {
-    use RefreshDatabase;
     use DatabaseMigrations;
+    use RefreshDatabase;
+
     protected function transformerPlace($list)
     {
         $response = [];

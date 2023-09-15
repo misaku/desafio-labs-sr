@@ -34,4 +34,3 @@ Route::middleware('auth:sanctum')->get('/places', [\App\Http\Controllers\PlacesC
 
 //HEALTH ROUTES---------------------------------------------------------------------------------------------------------------------
 Route::get('health', HealthCheckJsonResultsController::class);
-

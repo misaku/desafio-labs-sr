@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\PrimoRequest;
 use App\Models\Primo;
+use OpenApi\Annotations as OA;
 
 class PrimoController extends Controller
 {
@@ -15,7 +16,26 @@ class PrimoController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * @OA\Post(
+     *     path="/api/primo",
+     *     summary="Check if is Primo",
+     *          security={{"bearerAuth":{}}},
+     *
+     *     @OA\RequestBody(
+     *
+     *           @OA\JsonContent(
+     *              required={"number"},
+     *
+     *              @OA\Property(
+     *                  property="number",
+     *                  type="integer|array",
+     *                  example="1")
+     *          ),
+     *      ),
+     *
+     *     @OA\Response(response="200", description="successful"),
+     *     @OA\Response(response="401", description="Invalid credentials")
+     * )
      */
     public function store(PrimoRequest $request)
     {

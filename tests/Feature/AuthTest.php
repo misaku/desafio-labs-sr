@@ -10,8 +10,9 @@ use Tests\TestCase;
 
 class AuthTest extends TestCase
 {
-    use RefreshDatabase;
     use DatabaseMigrations;
+    use RefreshDatabase;
+
     public function setUp(): void
     {
         parent::setUp();

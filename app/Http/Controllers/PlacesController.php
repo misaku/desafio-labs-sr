@@ -5,12 +5,55 @@ namespace App\Http\Controllers;
 use App\Http\Requests\PlacesGetRequest;
 use App\Http\Requests\PlacesPostRequest;
 use App\Models\Place;
+use OpenApi\Annotations as OA;
 use Symfony\Component\HttpFoundation\Response;
 
 class PlacesController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * @OA\Get(
+     *     path="/api/places",
+     *     summary="list places",
+     *
+     *          @OA\Parameter(
+     *          name="x",
+     *          in="query",
+     *          required=false,
+     *          description="Valor de X",
+     *
+     *          @OA\Schema(type="integer")
+     *      ),
+     *
+     *      @OA\Parameter(
+     *          name="y",
+     *          in="query",
+     *          required=false,
+     *          description="Valor de Y",
+     *
+     *          @OA\Schema(type="integer")
+     *      ),
+     *
+     *      @OA\Parameter(
+     *          name="mts",
+     *          in="query",
+     *          required=false,
+     *          description="Valor de MTS",
+     *
+     *          @OA\Schema(type="integer")
+     *      ),
+     *
+     *      @OA\Parameter(
+     *          name="hr",
+     *          in="query",
+     *          required=false,
+     *          description="Valor de HR",
+     *
+     *          @OA\Schema(type="string")
+     *      ),
+     *
+     *     @OA\Response(response="200", description="Success"),
+     *     security={{"bearerAuth":{}}}
+     * )
      */
     public function index(PlacesGetRequest $request)
     {
@@ -49,7 +92,27 @@ class PlacesController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * @OA\Post(
+     *     path="/api/places",
+     *     summary="create places",
+     *          security={{"bearerAuth":{}}},
+     *
+     *     @OA\RequestBody(
+     *
+     *           @OA\JsonContent(
+     *              required={"name", "x", "y"},
+     *
+     *              @OA\Property(property="name", type="string", example="usuario"),
+     *              @OA\Property(property="x", type="integer", example="1"),
+     *              @OA\Property(property="y", type="integer", example="1"),
+     *              @OA\Property(property="opened", type="string", format="hours", example="01:00"),
+     *              @OA\Property(property="closed", type="string", format="hours", example="18:00")
+     *          ),
+     *      ),
+     *
+     *     @OA\Response(response="201", description="successful"),
+     *     @OA\Response(response="401", description="Invalid credentials")
+     * )
      */
     public function store(PlacesPostRequest $request)
     {

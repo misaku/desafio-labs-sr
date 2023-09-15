@@ -10,8 +10,9 @@ use Tests\TestCase;
 
 class SortTest extends TestCase
 {
-    use RefreshDatabase;
     use DatabaseMigrations;
+    use RefreshDatabase;
+
     public function setUp(): void
     {
         parent::setUp();

@@ -11,8 +11,9 @@ use Tests\TestCase;
 
 class AuthControllerTest extends TestCase
 {
-    use RefreshDatabase;
     use DatabaseMigrations;
+    use RefreshDatabase;
+
     public function setUp(): void
     {
         parent::setUp();

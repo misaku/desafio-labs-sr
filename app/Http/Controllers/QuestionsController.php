@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Question;
+use OpenApi\Annotations as OA;
 
 class QuestionsController extends Controller
 {
@@ -14,7 +15,13 @@ class QuestionsController extends Controller
     }
 
     /**
-     * Display a listing of the resource.
+     * @OA\Get(
+     *     path="/api/question",
+     *     summary="show questions and responses",
+     *
+     *     @OA\Response(response="200", description="Success"),
+     *     security={{"bearerAuth":{}}}
+     * )
      */
     public function index()
     {

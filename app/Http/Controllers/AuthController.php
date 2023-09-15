@@ -6,12 +6,30 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\ValidationException;
+use OpenApi\Annotations as OA;
 use Symfony\Component\HttpFoundation\Response;
 
 class AuthController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * @OA\Post(
+     *     path="/api/auth",
+     *     summary="Authenticate user and generate JWT token",
+     *
+     *     @OA\RequestBody(
+     *
+     *           @OA\JsonContent(
+     *              required={"email", "password", "device_name"},
+     *
+     *              @OA\Property(property="email", type="string", format="email", example="usuario@example.com"),
+     *              @OA\Property(property="password", type="string", format="password", example="senha123"),
+     *              @OA\Property(property="device_name", type="string", format="device_name", example="device_name")
+     *          ),
+     *      ),
+     *
+     *     @OA\Response(response="200", description="Login successful"),
+     *     @OA\Response(response="401", description="Invalid credentials")
+     * )
      */
     public function login(Request $request)
     {
@@ -39,6 +57,15 @@ class AuthController extends Controller
         ]);
     }
 
+    /**
+     * @OA\Delete(
+     *     path="/api/auth/logout",
+     *     summary="Authenticate user and generate JWT token",
+     *
+     *     @OA\Response(response="200", description="Login successful"),
+     *     security={{"bearerAuth":{}}}
+     * )
+     */
     public function logout(Request $request)
     {
         $request->user()->tokens()->delete();
@@ -46,6 +73,15 @@ class AuthController extends Controller
         return response()->noContent(Response::HTTP_OK);
     }
 
+    /**
+     * @OA\Get(
+     *     path="/api/auth/user",
+     *     summary="Get logged-in user details",
+     *
+     *     @OA\Response(response="200", description="Success"),
+     *     security={{"bearerAuth":{}}}
+     * )
+     */
     public function user(Request $request)
     {
         return $request->user();

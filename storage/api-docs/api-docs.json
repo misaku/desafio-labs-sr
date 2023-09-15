@@ -1,0 +1,304 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Swagger with Laravel",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/api/auth": {
+            "post": {
+                "summary": "Authenticate user and generate JWT token",
+                "operationId": "a8d85330b96bde8699cb2e66b5be211d",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "email",
+                                    "password",
+                                    "device_name"
+                                ],
+                                "properties": {
+                                    "email": {
+                                        "type": "string",
+                                        "format": "email",
+                                        "example": "usuario@example.com"
+                                    },
+                                    "password": {
+                                        "type": "string",
+                                        "format": "password",
+                                        "example": "senha123"
+                                    },
+                                    "device_name": {
+                                        "type": "string",
+                                        "format": "device_name",
+                                        "example": "device_name"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Login successful"
+                    },
+                    "401": {
+                        "description": "Invalid credentials"
+                    }
+                }
+            }
+        },
+        "/api/auth/logout": {
+            "delete": {
+                "summary": "Authenticate user and generate JWT token",
+                "operationId": "1ef69131b914976d7b0827b2b9d192df",
+                "responses": {
+                    "200": {
+                        "description": "Login successful"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/auth/user": {
+            "get": {
+                "summary": "Get logged-in user details",
+                "operationId": "e23e5f9b32cba7953a224624a2a16544",
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/places": {
+            "get": {
+                "summary": "list places",
+                "operationId": "2fd1be89008cc6f268dded20a9f48b19",
+                "parameters": [
+                    {
+                        "name": "x",
+                        "in": "query",
+                        "description": "Valor de X",
+                        "required": false,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "y",
+                        "in": "query",
+                        "description": "Valor de Y",
+                        "required": false,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "mts",
+                        "in": "query",
+                        "description": "Valor de MTS",
+                        "required": false,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "hr",
+                        "in": "query",
+                        "description": "Valor de HR",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            },
+            "post": {
+                "summary": "create places",
+                "operationId": "390f8d2f5570ae1fb410bc7062a0f70c",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "name",
+                                    "x",
+                                    "y"
+                                ],
+                                "properties": {
+                                    "name": {
+                                        "type": "string",
+                                        "example": "usuario"
+                                    },
+                                    "x": {
+                                        "type": "integer",
+                                        "example": "1"
+                                    },
+                                    "y": {
+                                        "type": "integer",
+                                        "example": "1"
+                                    },
+                                    "opened": {
+                                        "type": "string",
+                                        "format": "hours",
+                                        "example": "01:00"
+                                    },
+                                    "closed": {
+                                        "type": "string",
+                                        "format": "hours",
+                                        "example": "18:00"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "successful"
+                    },
+                    "401": {
+                        "description": "Invalid credentials"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/primo": {
+            "post": {
+                "summary": "Check if is Primo",
+                "operationId": "3bd618c1a2d27b4d3b245263d411bb68",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "number"
+                                ],
+                                "properties": {
+                                    "number": {
+                                        "type": "integer|array",
+                                        "example": "1"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "successful"
+                    },
+                    "401": {
+                        "description": "Invalid credentials"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/question": {
+            "get": {
+                "summary": "show questions and responses",
+                "operationId": "e086646d47d6146c68ca34f54b33cd9f",
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/sort": {
+            "post": {
+                "summary": "sort lists",
+                "operationId": "d11ac9f5a20d0a0abd370e38ccc14d0c",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "list"
+                                ],
+                                "properties": {
+                                    "list": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "integer"
+                                        },
+                                        "example": [
+                                            30,
+                                            1,
+                                            50,
+                                            2,
+                                            22,
+                                            3
+                                        ]
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "successful"
+                    },
+                    "401": {
+                        "description": "Invalid credentials"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        }
+    },
+    "components": {
+        "securitySchemes": {
+            "bearerAuth": {
+                "type": "http",
+                "bearerFormat": "JWT",
+                "scheme": "bearer"
+            }
+        }
+    }
+}

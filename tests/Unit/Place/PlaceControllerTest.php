@@ -11,8 +11,8 @@ use Tests\TestCase;
 
 class PlaceControllerTest extends TestCase
 {
-    use RefreshDatabase;
     use DatabaseMigrations;
+    use RefreshDatabase;
 
     public function setUp(): void
     {
