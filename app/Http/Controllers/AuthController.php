@@ -16,6 +16,8 @@ class AuthController extends Controller
      *     path="/api/auth",
      *     summary="Authenticate user and generate JWT token",
      *
+     *     tags={"Auth"},
+     *
      *     @OA\RequestBody(
      *
      *           @OA\JsonContent(
@@ -62,6 +64,8 @@ class AuthController extends Controller
      *     path="/api/auth/logout",
      *     summary="Authenticate user and generate JWT token",
      *
+     *     tags={"Auth"},
+     *
      *     @OA\Response(response="200", description="Login successful"),
      *     security={{"bearerAuth":{}}}
      * )
@@ -77,6 +81,8 @@ class AuthController extends Controller
      * @OA\Get(
      *     path="/api/auth/user",
      *     summary="Get logged-in user details",
+     *
+     *     tags={"Auth"},
      *
      *     @OA\Response(response="200", description="Success"),
      *     security={{"bearerAuth":{}}}

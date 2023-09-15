@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use OpenApi\Annotations as OA;
 use Spatie\Health\Http\Controllers\HealthCheckJsonResultsController;
 
 /*

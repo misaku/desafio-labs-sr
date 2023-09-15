@@ -19,6 +19,8 @@ class QuestionsController extends Controller
      *     path="/api/question",
      *     summary="show questions and responses",
      *
+     *     tags={"Questions"},
+     *
      *     @OA\Response(response="200", description="Success"),
      *     security={{"bearerAuth":{}}}
      * )

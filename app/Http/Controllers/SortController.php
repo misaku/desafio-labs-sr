@@ -19,7 +19,9 @@ class SortController extends Controller
      * @OA\Post(
      *     path="/api/sort",
      *     summary="sort lists",
-     *          security={{"bearerAuth":{}}},
+     *     security={{"bearerAuth":{}}},
+     *
+     *     tags={"Sort"},
      *
      *          @OA\RequestBody(
      *

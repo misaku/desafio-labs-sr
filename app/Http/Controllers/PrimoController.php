@@ -19,7 +19,9 @@ class PrimoController extends Controller
      * @OA\Post(
      *     path="/api/primo",
      *     summary="Check if is Primo",
-     *          security={{"bearerAuth":{}}},
+     *     security={{"bearerAuth":{}}},
+     *
+     *     tags={"Primo"},
      *
      *     @OA\RequestBody(
      *

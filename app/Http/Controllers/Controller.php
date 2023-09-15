@@ -9,7 +9,7 @@ use OpenApi\Annotations as OA;
 
 /**
  * @OA\Info(
- *    title="Swagger with Laravel",
+ *    title="Desafio Desenvolvedor Senior",
  *    version="1.0.0",
  * )
  *
@@ -18,6 +18,20 @@ use OpenApi\Annotations as OA;
  *     securityScheme="bearerAuth",
  *     scheme="bearer",
  *     bearerFormat="JWT"
+ * )
+ *
+ * @OA\Get(
+ *     path="/api/health",
+ *     summary="Verificar status de saúde",
+ *     tags={"Health"},
+ *     @OA\Response(
+ *         response=200,
+ *         description="OK - A aplicação está saudável"
+ *     ),
+ *     @OA\Response(
+ *         response=500,
+ *         description="Erro - A aplicação está com problemas de saúde"
+ *     ),
  * )
  */
 class Controller extends BaseController

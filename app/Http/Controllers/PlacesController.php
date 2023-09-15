@@ -15,6 +15,8 @@ class PlacesController extends Controller
      *     path="/api/places",
      *     summary="list places",
      *
+     *     tags={"Places"},
+     *
      *          @OA\Parameter(
      *          name="x",
      *          in="query",
@@ -95,7 +97,9 @@ class PlacesController extends Controller
      * @OA\Post(
      *     path="/api/places",
      *     summary="create places",
-     *          security={{"bearerAuth":{}}},
+     *     security={{"bearerAuth":{}}},
+     *
+     *     tags={"Places"},
      *
      *     @OA\RequestBody(
      *

@@ -16,6 +16,13 @@
         <include>
             <directory>app</directory>
         </include>
+        <exclude>
+            <file>app/Http/Middleware/Authenticate.php</file>
+            <file>app/Http/Middleware/RedirectIfAuthenticated.php</file>
+            <file>app/Http/Middleware/TrustHosts.php</file>
+            <file>app/Providers/BroadcastServiceProvider.php</file>
+            <file>app/Console/Kernel.php</file>
+        </exclude>
     </source>
     <php>
         <env name="APP_ENV" value="testing"/>
