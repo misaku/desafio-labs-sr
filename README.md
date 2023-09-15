@@ -8,7 +8,19 @@
  - [docker/docker-componser](https://docs.docker.com/engine/install/)
 
 ### START 
-Eu segui o starte padrão do laravel com composer, e vou usarele para poder criar os endpoints e responder os desafios, o código abaixo serve para iniciar o projeto
+Eu segui o start e padrão do laravel com composer, e vou usar ele para poder criar os endpoints e responder os desafios, o código abaixo serve para iniciar o projeto
+```bash
+# comando funciona em bash 
+docker run --rm \
+    -u "$(id -u):$(id -g)" \
+    -v "$(pwd):/var/www/html" \
+    -w /var/www/html \
+    laravelsail/php82-composer:latest \
+    composer install --ignore-platform-reqs
+```
+```bash
+alias sail='[ -f sail ] && sh sail || sh vendor/bin/sail'
+```
 - vamos definir um alias para facilitar o nossos comandos
 ```bash
 alias sail='[ -f sail ] && sh sail || sh vendor/bin/sail'
