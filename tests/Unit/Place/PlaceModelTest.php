@@ -3,13 +3,14 @@
 namespace Tests\Unit\Place;
 
 use App\Models\Place;
+use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
 class PlaceModelTest extends TestCase
 {
     use RefreshDatabase;
-
+    use DatabaseMigrations;
     protected function transformerPlace($list)
     {
         $response = [];

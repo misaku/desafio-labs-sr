@@ -5,12 +5,14 @@ namespace Tests\Unit\Place;
 use App\Http\Controllers\PlacesController;
 use App\Http\Requests\PlacesGetRequest;
 use App\Http\Requests\PlacesPostRequest;
+use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
 class PlaceControllerTest extends TestCase
 {
     use RefreshDatabase;
+    use DatabaseMigrations;
 
     public function setUp(): void
     {

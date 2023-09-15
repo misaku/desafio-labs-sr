@@ -4,6 +4,7 @@ namespace Tests\Unit\Auth;
 
 use App\Http\Controllers\AuthController;
 use App\Http\Requests\PlacesGetRequest;
+use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Validation\ValidationException;
 use Tests\TestCase;
@@ -11,7 +12,7 @@ use Tests\TestCase;
 class AuthControllerTest extends TestCase
 {
     use RefreshDatabase;
-
+    use DatabaseMigrations;
     public function setUp(): void
     {
         parent::setUp();

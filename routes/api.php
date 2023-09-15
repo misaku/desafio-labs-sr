@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Spatie\Health\Http\Controllers\HealthCheckJsonResultsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,3 +31,7 @@ Route::middleware('auth:sanctum')->get('/question', [\App\Http\Controllers\Quest
 //PLACE ROUTES---------------------------------------------------------------------------------------------------------------------
 Route::middleware('auth:sanctum')->post('/places', [\App\Http\Controllers\PlacesController::class, 'store']);
 Route::middleware('auth:sanctum')->get('/places', [\App\Http\Controllers\PlacesController::class, 'index']);
+
+//HEALTH ROUTES---------------------------------------------------------------------------------------------------------------------
+Route::get('health', HealthCheckJsonResultsController::class);
+

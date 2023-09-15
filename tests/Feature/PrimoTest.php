@@ -3,6 +3,7 @@
 namespace Tests\Feature;
 
 // use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Symfony\Component\HttpFoundation\Response;
 use Tests\TestCase;
@@ -10,7 +11,7 @@ use Tests\TestCase;
 class PrimoTest extends TestCase
 {
     use RefreshDatabase;
-
+    use DatabaseMigrations;
     public function setUp(): void
     {
         parent::setUp();
