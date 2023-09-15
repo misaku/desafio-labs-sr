@@ -21,17 +21,52 @@ Obs: como definimos o alias quando digitamos `sail up` é o mesmo que  `./vendor
 ```bash
 sail stop
 ```
-# testes
-```bash I'm Tab com cobertura
-sail artisan  test --coverage
+# migrations e seeds
+```bash
+sail artisan migrate:fresh --seed
 ```
-```bash I'm Tab com cobertura html
+# testes
+ - unit OK
+ - e2e OK
+
+
+```bash 
+# normal
+sail artisan  test
+
+# com cobertura
+sail artisan  test --coverage
+
+# com cobertura gerando html
 sail artisan  test --coverage-html build/coverage
 ```
-```bash I'm Tab normal
-sail artisan  test
+***obs1:*** se houver algum erro ao fazer os testes tente limpar o cache, caso dao der certo tenta da permissao napsta `storage` e tente limpar novamente o cache
+
+```bash
+# limpa cache
+sail artisan cache:clear
 ```
+***obs2:*** caminho da pasta de log `./storage/logs/`
+***obs3:*** tentei configurar o elasticsearh com kibana mas estava dando erro na implementacao, como ia demandar mais tempo, infelizmente optei para deixar sem para entrega
+
+## HEALTHCHECK
+
+
 ## Endpoints:
+| CONTEXTO | METHOD | ENDPONT              | AUTHENTICATED | CURL                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+|----------|--------|----------------------|---------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| WEB      | GET    | `/api/documentation` | NÃO           | `curl --request GET --url 'http://localhost/api/documentation'`                                                                                                                                                                                                                                                                                                                                                                                        |
+| WEB      | GET    | `/health`            | NÃO           | `curl --request GET --url 'http://localhost/api/health'`                                                                                                                                                                                                                                                                                                                                                                                               |
+| API      | GET    | `/api/health`        | NÃO           | `curl --request GET --url 'http://localhost/api/health'`                                                                                                                                                                                                                                                                                                                                                                                               |
+| API      | POST   | `/api/auth`          | NÃO           | `curl --request POST --url http://localhost/api/auth --header 'Content-Type: application/json' --data '{ "email":"admin@luizalabs.com", "password": "#luizaLabs123", "device_name": "device-123" }'`                                                                                                                                                                                                                                                   |
+| API      | GET    | `/api/auth/user`     | SIM           | `curl --request GET --url 'http://localhost/api/auth/user' --header 'Authorization: Bearer ---TOKEN---'`                                                                                                                                                                                                                                                                                                                                               |
+| API      | DELETE | `/api/auth/logout`   | SIM           | `curl --request DELETE --url 'http://localhost/api/auth/logout' --header 'Authorization: Bearer ---TOKEN---'`                                                                                                                                                                                                                                                                                                                                          |
+| API      | GET    | `/api/question`      | SIM           | `curl --request GET --url 'http://localhost/api/question'`                                                                                                                                                                                                                                                                                                                                                                                             |
+| API      | POST   | `/api/primo`         | SIM           | `curl --request POST --url http://localhost/api/primo  --header 'Authorization: Bearer ---TOKEN---' --data '{"number": 11}'` ou `curl --request POST --url http://localhost/api/primo  --header 'Authorization: Bearer ---TOKEN---' --data '{"number": [11]}'`                                                                                                                                                                                         |
+| API      | POST   | `/api/sort`          | SIM           | `curl --request POST --url http://localhost/api/sort  --header 'Authorization: Bearer ---TOKEN---' --data '{"list": [11,2,5,30,50,7]}'`                                                                                                                                                                                                                                                                                                                |
+| API      | POST   | `/api/places`        | SIM           | `curl --request POST --url http://localhost/api/places  --header 'Authorization: Bearer ---TOKEN---' --data '{"name":"teste 1","x": 9,"y": 1}'` ou `curl --request POST --url http://localhost/api/places  --header 'Authorization: Bearer ---TOKEN---' --data '{"name":"teste 2","x": 9,"y": 1,"closed": "22:00","opened": "18:00"}'`                                                                                                                 |
+| API      | GET    | `/api/places`        | SIM           | `curl --request GET --url 'http://localhost/api/places' --header 'Authorization: ---TOKEN---'` ou `curl --request GET --url 'http://localhost/api/places?hr=19%3A00' --header 'Authorization: ---TOKEN---'` ou `curl --request GET --url 'http://localhost/api/places?x=20&y=10' --header 'Authorization: ---TOKEN---'` ou `curl --request GET --url 'http://localhost/api/places?hr=19%3A00&x=20&y=10&mts=10' --header 'Authorization: ---TOKEN---'`  |
+
 
 ## Instruções:
 Responda a todas as perguntas com base em seu conhecimento e experiência. Você pode usar qualquer linguagem de programação de sua escolha.
