@@ -2,6 +2,11 @@
 ### ATENÇÃO
 * Este desafio é destinado a vaga senior em PHP, estou me aplicando a vaga, tenho uma experiencia de 7 ano de php porem faz 5 anos que nao tenho contato com o mesmo, e nao tenho experiencia o framwork laravel, porem vou utilizar o mesmo po se tratar do quevou enfrentar caso passar na vag =)
 * Vou tentar responder tudo através da API
+
+### DEPENDÊNCIAS
+ - git
+ - [docker/docker-componser](https://docs.docker.com/engine/install/)
+
 ### START 
 Eu segui o starte padrão do laravel com composer, e vou usarele para poder criar os endpoints e responder os desafios, o código abaixo serve para iniciar o projeto
 - vamos definir um alias para facilitar o nossos comandos
