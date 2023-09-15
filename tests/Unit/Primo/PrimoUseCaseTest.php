@@ -3,7 +3,7 @@
 namespace Tests\Unit\Primo;
 
 use App\Http\UseCases\Primo;
-use PHPUnit\Framework\TestCase;
+use Tests\TestCase;
 
 define('VALID_NUMBERS', [2, 3, 5, 7, 11, 13]);
 define('INVALID_NUMBERS', [-3, -1, 0, 1, 4, 6, 8, 9, 10, 12]);

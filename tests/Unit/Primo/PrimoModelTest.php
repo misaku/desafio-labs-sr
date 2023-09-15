@@ -3,7 +3,7 @@
 namespace Tests\Unit\Primo;
 
 use App\Models\Primo as PrimoModel;
-use PHPUnit\Framework\TestCase;
+use Tests\TestCase;
 
 class PrimoModelTest extends TestCase
 {

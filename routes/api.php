@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 //AUTH ROUTES---------------------------------------------------------------------------------------------------------------------
 Route::post('/auth', [\App\Http\Controllers\AuthController::class, 'login'])->withoutMiddleware(\App\Http\Middleware\Logger::class);
 Route::middleware('auth:sanctum')->get('/auth/user', [\App\Http\Controllers\AuthController::class, 'user']);
+Route::middleware('auth:sanctum')->delete('/auth/logout', [\App\Http\Controllers\AuthController::class, 'logout']);
 
 //PRIMO ROUTES---------------------------------------------------------------------------------------------------------------------
 Route::middleware('auth:sanctum')->post('/primo', [\App\Http\Controllers\PrimoController::class, 'store']);

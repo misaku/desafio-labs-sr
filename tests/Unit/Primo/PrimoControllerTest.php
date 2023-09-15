@@ -4,7 +4,7 @@ namespace Tests\Unit\Primo;
 
 use App\Http\Controllers\PrimoController;
 use App\Http\Requests\PrimoRequest;
-use PHPUnit\Framework\TestCase;
+use Tests\TestCase;
 
 class PrimoControllerTest extends TestCase
 {

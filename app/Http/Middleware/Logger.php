@@ -20,6 +20,27 @@ class Logger
 
     public function terminate(Request $request, Response $response)
     {
-        info('teste');
+
+        $log = [
+            'URI' => $request->getUri(),
+            'METHOD' => $request->getMethod(),
+            'REQUEST_BODY' => $request->all(),
+            'RESPONSE' => $response->getContent(),
+        ];
+
+        $message = [];
+
+        foreach ($log as $key => $value) {
+            $content = $value;
+            if (! is_string($content)) {
+                $content = json_encode($content);
+            }
+            $message[] = $key.': '.$content;
+        }
+
+        $message = implode(', ', $message);
+
+        info($message);
+
     }
 }

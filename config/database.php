@@ -34,7 +34,7 @@ return [
     */
 
     'connections' => [
-        'sqlite_test' => [
+        'sqlite_testing' => [
             'driver' => 'sqlite',
             'database' => ':memory:',
             'prefix' => '',

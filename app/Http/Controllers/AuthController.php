@@ -27,7 +27,7 @@ class AuthController extends Controller
         $isValidPassword = Hash::check($request->password, $user->password);
 
         if (! $user || ! $isValidPassword) {
-            throw ValidationException::withMessages(['auth' => 'email ou senha invalido(s)']);
+            throw ValidationException::withMessages(['auth' => 'email ou senha invalido(s)'])->status(Response::HTTP_UNAUTHORIZED);
         }
 
         $user->tokens()->delete();

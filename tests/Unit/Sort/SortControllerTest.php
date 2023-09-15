@@ -4,7 +4,7 @@ namespace Tests\Unit\Sort;
 
 use App\Http\Controllers\SortController;
 use App\Http\Requests\SortRequest;
-use PHPUnit\Framework\TestCase;
+use Tests\TestCase;
 
 class SortControllerTest extends TestCase
 {
