@@ -43,6 +43,7 @@ sail artisan  test --coverage-html build/coverage
 sail artisan cache:clear
 ```
 ***obs2:*** caminho da pasta de log `./storage/logs/`
+
 ***obs3:*** tentei configurar o elasticsearh com kibana mas estava dando erro na implementacao, como ia demandar mais tempo, infelizmente optei para deixar sem para entrega
 
 ## Acesso
