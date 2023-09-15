@@ -1,6 +1,6 @@
 # DESAFIO LABS
 ### ATENÇÃO
-* Este desafio é destinado a vaga senior em PHP, estou me aplicando a vaga, tenho uma experiencia de 7 ano de php porem faz 5 anos que nao tenho contato com o mesmo, e nao tenho experiencia o framwork laravel, porem vou utilizar o mesmo po se tratar do quevou enfrentar caso passar na vag =)
+* Este desafio é destinado a vaga senior em PHP, estou me aplicando a vaga, tenho uma experiencia de 7 anos de php porém faz 5 anos que não tenho contato com o mesmo, e não tenho experiência o framework laravel, porém vou utilizar o mesmo, por se tratar do que vou enfrentar, caso passe na vaga =)
 * Vou tentar responder tudo através da API
 
 ### DEPENDÊNCIAS
